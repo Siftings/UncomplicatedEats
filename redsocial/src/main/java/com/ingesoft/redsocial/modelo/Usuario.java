@@ -1,7 +1,9 @@
 package com.ingesoft.redsocial.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -12,16 +14,19 @@ import lombok.Data;
 public class Usuario {
 
     @Id
-    String login;
+    private String login;
 
-    String nombre;
+    private String nombre;
 
-    String password;
+    private String password;
 
-    @OneToMany(mappedBy = "remitente")
-    List<SolicitudAmistad> solicitudesEnviadas;
+    private Double pesoActual;
 
-    @OneToMany(mappedBy = "destinatario")
-    List<SolicitudAmistad> solicitudesRecibidas;
+    private Double altura;
+
+    private Integer objetivoCalorias;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comida> comidas = new ArrayList<>();
 
 }

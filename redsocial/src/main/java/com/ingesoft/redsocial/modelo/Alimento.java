@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class CategoriaComida {
+public class Alimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,19 @@ public class CategoriaComida {
 
     private String nombre;
 
-    private String descripcion;
+    private String marca;
 
-    private Integer orden;
+    private Integer caloriasPor100g;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comida> comidas = new ArrayList<>();
+    private Double proteinasPor100g;
+
+    private Double carbohidratosPor100g;
+
+    private Double grasasPor100g;
+
+    private Boolean esGenerico = true;
+
+    @OneToMany(mappedBy = "alimento", cascade = CascadeType.ALL)
+    private List<AlimentoComida> alimentosComida = new ArrayList<>();
 
 }
