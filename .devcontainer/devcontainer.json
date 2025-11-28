@@ -1,0 +1,52 @@
+// Configuración para el devcontainer
+// - formato: https://aka.ms/devcontainer.json
+{
+	"name": "Java",
+
+	// usa Ubuntu 24 como base
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+	// agrega características de programación Java
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "latest",
+			"jdkDistro": "ms",
+			"installMaven": true,
+			"installGradle": false
+		},
+		"ghcr.io/devcontainers-extra/features/springboot-sdkman:2": {
+			"jdkVersion": "latest",
+			"jdkDistro": "ms"
+		}
+	},
+
+	// Configuraciones
+	"customizations": {
+		// para VS Code.
+		"vscode": {
+			"settings": { 
+				"plantuml.server": "https://plantuml.online/"
+			},
+			
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"vmware.vscode-boot-dev-pack",
+				"MermaidChart.vscode-mermaid-chart",
+				"jebbs.plantuml"
+			]
+		}
+	}
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
+
