@@ -1,7 +1,5 @@
 package com.ingesoft.redsocial.servicios;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +10,10 @@ import com.ingesoft.redsocial.repositorios.UsuarioRepository;
 public class UsuarioService {
 
     @Autowired
-    UsuarioRepository usuarios;
-
+    private UsuarioRepository usuarios;
 
     // CU01 - Registrar nuevo usuario
-    public void registrarNuevoUsuario(
+    public Usuario registrarNuevoUsuario(
         String login,
         String nombre,
         String password
@@ -37,13 +34,13 @@ public class UsuarioService {
         usuario.setLogin(login);
         usuario.setNombre(nombre);
         usuario.setPassword(password);
-        usuarios.save(usuario);
-
+        usuario.setObjetivoCalorias(2000); // Valor por defecto
+        
+        return usuarios.save(usuario);
     }
 
-
     // CU02 - Iniciar sesión
-    public void iniciarSesion (
+    public Usuario iniciarSesion(
         String login,
         String password
     ) throws Exception {
@@ -55,30 +52,24 @@ public class UsuarioService {
 
         // 4. Sistema verifica que el password coincida con el password de ese usuario
         Usuario usuario = usuarios.findById(login).get();
-        // si el password no coincide, lanzar excepción
+        
         if (!password.equals(usuario.getPassword())) {
             throw new Exception("No coincide el password");
         }
 
         // 5. Sistema establece el usuario actual
-
+        return usuario;
     }
 
+    public Usuario obtenerUsuario(String login) throws Exception {
+        return usuarios.findById(login)
+            .orElseThrow(() -> new Exception("No existe un usuario con ese login"));
+    }
 
-    // CU03 - Buscar persona
-    public List<Usuario> buscarPersona (
-        String nombre
-    ) throws Exception {
-        
-        // 2. Sistema busca usuarios con ese nombre
-        List<Usuario> personas = usuarios.findByNombreContains(nombre);
-
-        if (personas == null || personas.size() == 0) {
-            throw new Exception("No se encuentran personas con ese nombre");
-        }
-
-        // 3. Sistema muestra el login y nombre de los usuarios 
-        return personas;
+    public Usuario actualizarObjetivoCalorias(String login, Integer objetivo) throws Exception {
+        Usuario usuario = obtenerUsuario(login);
+        usuario.setObjetivoCalorias(objetivo);
+        return usuarios.save(usuario);
     }
 
 }
