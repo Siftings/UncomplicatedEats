@@ -20,7 +20,7 @@ Actor : Visitante
 
 **Excepction:** El password no cumple con las reglas
 
-5.1. Sistema muestra un mensaje "La contraseña no cumple con la política de la red social"
+5.1. Sistema muestra un mensaje "La contraseña no cumple con los requisitos minimos"
 5.2. Termina
 
 
