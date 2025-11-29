@@ -12,7 +12,15 @@
 *.tar.gz
 *.rar
 
+# Fronend generado por vaadin
+redsocial/src/main/frontend/
+
+# Md de documentacion
+RUN.md
+
 # maven files
+
+
 target/
 
 # gradle files

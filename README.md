@@ -62,6 +62,7 @@ mvn test
 
 ### Acceder a la aplicación
 - **URL**: http://localhost:8080
+<!-- En la maquina de codespaces es %github.dev/h2-console/login.jsp -->
 - **Consola H2**: http://localhost:8080/h2-console
   - JDBC URL: `jdbc:h2:mem:testdb`
   - Usuario: `sa`
@@ -101,7 +102,7 @@ mvn test
 - Haz clic en el botón "✏️" para editar
 - Haz clic en el botón "🗑️" para eliminar
 
-## 📊 Especificaciones Técnicas
+## Especificaciones Técnicas
 
 ### Modelo de Datos
 - **Usuario**: Información del usuario y objetivo calórico
