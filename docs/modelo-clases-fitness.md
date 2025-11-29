@@ -1,4 +1,4 @@
-# Modelo de Clases - App de Fitness y Alimentación
+# Modelo de Clases - Uncomplicated Eats
 
 ## Diagrama de Clases
 
