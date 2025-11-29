@@ -24,7 +24,7 @@ public interface ComidaRepository extends JpaRepository<Comida, Long> {
     @Query("""
         SELECT c FROM Comida c 
         WHERE c.usuario = :usuario 
-        AND DATE(c.fechaHora) = :fecha 
+        AND CAST(c.fechaHora AS DATE) = :fecha 
         ORDER BY c.categoria.orden ASC, c.fechaHora ASC
     """)
     List<Comida> findByUsuarioAndFecha(
@@ -35,7 +35,7 @@ public interface ComidaRepository extends JpaRepository<Comida, Long> {
     @Query("""
         SELECT SUM(c.totalCalorias) FROM Comida c 
         WHERE c.usuario = :usuario 
-        AND DATE(c.fechaHora) = :fecha
+        AND CAST(c.fechaHora AS DATE) = :fecha
     """)
     Integer sumCaloriasByUsuarioAndFecha(
         @Param("usuario") Usuario usuario, 
