@@ -62,7 +62,7 @@ public class ResumenDiarioView extends VerticalLayout implements BeforeEnterObse
         header.setJustifyContentMode(JustifyContentMode.BETWEEN);
         header.setAlignItems(Alignment.CENTER);
 
-        H1 titulo = new H1("🍎 FitTracker - Resumen Diario");
+        H1 titulo = new H1("Uncomplicated Eats - Resumen Diario");
         titulo.getStyle().set("color", "#4CAF50");
 
         Button cerrarSesionBtn = new Button("Cerrar Sesión", event -> cerrarSesion());

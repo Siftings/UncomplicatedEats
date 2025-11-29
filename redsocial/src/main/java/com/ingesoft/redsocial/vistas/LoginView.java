@@ -44,7 +44,7 @@ public class LoginView extends VerticalLayout {
                              .set("border-radius", "8px")
                              .set("box-shadow", "0 2px 10px rgba(0,0,0,0.1)");
 
-        H1 titulo = new H1("🍎 FitTracker");
+        H1 titulo = new H1("Uncomplicated Eats");
         titulo.getStyle().set("text-align", "center")
                          .set("color", "#4CAF50");
 
