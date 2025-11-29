@@ -45,4 +45,4 @@ Actor: Usuario registrado
 
 ---
 
-> [Listado de casos de uso](../casos-de-uso-fitness.md)
+> [Listado de casos de uso](../casos-de-uso.md)

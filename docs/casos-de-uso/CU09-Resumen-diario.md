@@ -73,4 +73,4 @@ Proteínas: 120g | Carbohidratos: 200g | Grasas: 65g
 
 ---
 
-> [Listado de casos de uso](../casos-de-uso-fitness.md)
+> [Listado de casos de uso](../casos-de-uso.md)

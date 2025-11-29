@@ -25,4 +25,4 @@ Actor: Sistema (automático al inicializar)
 
 ---
 
-> [Listado de casos de uso](../casos-de-uso-fitness.md)
+> [Listado de casos de uso](../casos-de-uso.md)
